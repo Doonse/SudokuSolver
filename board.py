@@ -12,7 +12,13 @@ class Board:
         self.n_rows = len(nums[0]) # row of 9 numbers
         self.n_cols = len(nums) # column of 9 numbers
 
-        self.nums = [[None for _ in range(self.n_rows)] for _ in range(self.n_cols)]
+        #self.nums = [[None for _ in range(self.n_rows)] for _ in range(self.n_cols)]
+
+        self.nums = np.zeros((9,9))
+
+        for i in range(self.n_rows):
+            for j in range(self.n_cols):
+                self.nums[i, j] = int(nums[i, j])
 
 
     def _set_up_nums(self, nums):

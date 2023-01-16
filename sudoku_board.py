@@ -1,5 +1,7 @@
 from board import Board
 from sudoku_reader import Sudoku_reader
+from square import Square
+from element import Element
 
 
 class SudokuBoard(Board):
