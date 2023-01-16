@@ -31,9 +31,6 @@ class Sudoku_reader:
         except:
             print("Reading error")
             quit(-1)
-
-    def __del__(self):
-        self.file.close()
         
 
 

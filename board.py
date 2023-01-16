@@ -23,21 +23,16 @@ class Board:
 
     def _set_up_nums(self, nums):
         # Set up the squares on the board (ints into Square objects)
-        for i in range(nums):
-            square = nums[i]
+        pass
 
     def _set_up_elems(self):
         # You should set up links between your squares and elements
         # (rows, columns, boxes)
         pass
 
-
-
-    def solve(self):
-        # Your solving algorithm goes here!
-
-
+    def solve(selv):
         pass
+
 
 
     # Makes it possible to print a board in a sensible format

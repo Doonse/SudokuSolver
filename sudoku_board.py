@@ -2,21 +2,42 @@ from board import Board
 from sudoku_reader import Sudoku_reader
 from square import Square
 from element import Element
+import numpy as np
 
 
 class SudokuBoard(Board):
 
     def __init__(self, nums):
         super().__init__(nums)
+        self.board = nums
 
-    def row(self, nums): # Row of numbers we compare when inserting a number to that row
+    def _set_up_nums(self, nums):
+        # Set up the squares on the board (ints into Square objects)
+        self.nums = np.array((9, 9)) # obj arr
+        for i in range(9):
+            for j in range(9):
+                num = Square.setNumber(nums[i, j]) # Gjør til obj
+                print(num)
+                nums[i, j] = num # Append
+
+    def _set_up_elems(self):
+        # You should set up links between your squares and elements
+        # (rows, columns, boxes)
+
         pass
 
-    def col(self, nums): # Column of numbers we compare when inserting a number to that column
+    def solveSudoku(self):
+    # Your solving algorithm goes here!
+
+
         pass
 
-    def three_three(self,nums): # 3x3 square of numbers we compare when inserting a number to that square
-        pass
+a = SudokuBoard()
+print(a)
+    
+
+
+
 
 
 
