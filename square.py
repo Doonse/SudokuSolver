@@ -1,9 +1,16 @@
-from sudoku_reader import Sudoku_reader
+
 
 class Square:
 
     def __init__(self, nums):
-        super().__init__(nums)
+        self.num = None
+        self.connections = [None, None, None]
+
+    def setNumber(self, number):
+        self.num = number
+
 
     
+b = Square(0)
 
+print(b.num)
