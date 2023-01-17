@@ -9,16 +9,12 @@ class Board:
 
     def __init__(self, nums):
         # Nums parameter is a 2D list, like what the sudoku_reader returns
-        self.n_rows = len(nums[0]) # row of 9 numbers
-        self.n_cols = len(nums) # column of 9 numbers
+        self.n_rows = len(nums[0]) # 9
+        self.n_cols = len(nums) # 9
+        self.nums = [[None for _ in range(self.n_rows)] for _ in range(self.n_cols)]
 
-        #self.nums = [[None for _ in range(self.n_rows)] for _ in range(self.n_cols)]
-
-        self.nums = np.zeros((9,9))
-
-        for i in range(self.n_rows):
-            for j in range(self.n_cols):
-                self.nums[i, j] = int(nums[i, j])
+        
+        return 
 
 
     def _set_up_nums(self, nums):
@@ -38,18 +34,17 @@ class Board:
     # Makes it possible to print a board in a sensible format
     def __str__(self):
         r = "Board with " + str(self.n_rows) + " rows and " + str(self.n_cols) + " columns:\n"
-        r += "[["
+        r += " ["
         for num in self.nums:
             for elem in num:
-                r += elem.__str__() + ", "
+                r += int(elem).__str__() + "  "
             r = r[:-2] + "]" + "\n ["
-        r = r[:-3] + "]"
+        r = r[:-3] + ""
         return r
-
-
+    
 
 
 if __name__ == "__main__":
     reader = Sudoku_reader("sudoku_10.csv")
-    board = Board(reader.next_board())
-    print(board)
+    print(reader.next_board())
+    print(Board())

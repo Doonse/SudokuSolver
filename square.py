@@ -4,18 +4,13 @@ class Square:
 
     def __init__(self, nums):
         self.num = None
-        self.connections = [None for i in range(9)]
+        self.connections = [None, None, None]
 
     def setNumber(self, number):
         self.num = number
 
-    
-
-
-
-
-
 
     
-b = Square(1)
-b.setNumber(1)   
+b = Square(0)
+
+print(b.num)
