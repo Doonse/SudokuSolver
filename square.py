@@ -8,9 +8,17 @@ class Square:
 
     def setNumber(self, number):
         self.num = number
-
-
     
-b = Square(0)
+    def setConnections(self, connections):
+        self.connections = connections
 
-print(b.num)
+    def getNumber(self):
+        return self.num
+
+    def getConnections(self):
+        return self.connections
+
+    def __str__(self):
+        return str(self.num)
+
+

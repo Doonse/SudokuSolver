@@ -7,13 +7,11 @@ class Board:
     # It is your task to subclass this in order to make it more fit
     # to be a sudoku board
 
-    def __init__(self, nums):
+    def __init__(self):
         # Nums parameter is a 2D list, like what the sudoku_reader returns
-        self.n_rows = len(nums[0]) # 9
-        self.n_cols = len(nums) # 9
+        self.n_rows = 9
+        self.n_cols = 9
         self.nums = [[None for _ in range(self.n_rows)] for _ in range(self.n_cols)]
-
-        
         return 
 
 
@@ -47,4 +45,3 @@ class Board:
 if __name__ == "__main__":
     reader = Sudoku_reader("sudoku_10.csv")
     print(reader.next_board())
-    print(Board())
