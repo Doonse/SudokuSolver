@@ -4,29 +4,12 @@ from square import Square
 import numpy as np
 
 class Board:
-    # It is your task to subclass this in order to make it more fit
-    # to be a sudoku board
 
     def __init__(self):
         # Nums parameter is a 2D list, like what the sudoku_reader returns
         self.n_rows = 9
         self.n_cols = 9
         self.nums = [[None for _ in range(self.n_rows)] for _ in range(self.n_cols)]
-        return 
-
-
-    def _set_up_nums(self, nums):
-        # Set up the squares on the board (ints into Square objects)
-        pass
-
-    def _set_up_elems(self):
-        # You should set up links between your squares and elements
-        # (rows, columns, boxes)
-        pass
-
-    def solve(selv):
-        pass
-
 
 
     # Makes it possible to print a board in a sensible format
@@ -35,7 +18,7 @@ class Board:
         r += " ["
         for num in self.nums:
             for elem in num:
-                r += int(elem).__str__() + "  "
+                r += elem.__str__() + "  "
             r = r[:-2] + "]" + "\n ["
         r = r[:-3] + ""
         return r
