@@ -51,8 +51,7 @@ class Element():
         return self.box_squares
 
     def get_num(self):
-        return self.array
-
+        return str(self.array)
 
 
 
@@ -67,7 +66,8 @@ if __name__ == "__main__":
     elem.set_row_nums(obj_nums)
     elem.set_col_nums(obj_nums)
     elem.set_box_nums(obj_nums)
-    print(elem.get_row_squares())
-    print(elem.get_col_squares())
-    print(elem.get_box_squares())
+    #print(elem.get_row_squares())
+    #print(elem.get_col_squares())
+    #print(elem.get_box_squares())
+    print(elem.get_num())
 
