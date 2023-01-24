@@ -9,7 +9,6 @@ class Square:
         self.col = col   # nums[row_number][col_number] 
         self.box = None  # find_box() method will set this
 
-
     # Find box number
     def find_box(self):
         if self.row < 3:                              # Top 3 rows
