@@ -2,12 +2,12 @@ import numpy as np
 
 class Square:
 
-    def __init__(self, row, col, num, nums):
+    def __init__(self, row, col, box, num, nums):
         self.nums = nums # nums is a 9x9 array
         self.num = num   # num is a number 
         self.row = row   # nums[row_number][col_number]
         self.col = col   # nums[row_number][col_number] 
-        self.box = None  # find_box() method will set this
+        self.box = box   # find_box() method will set this
 
     # Find box number
     def find_box(self):
@@ -110,7 +110,7 @@ class Square:
     def set_col(self, col):
         self.col = col
     
-    def set_box(self, box): # Assign this value with find_box() method
+    def set_box(self, box): 
         self.box = box
     
     # Getters
@@ -129,6 +129,12 @@ class Square:
     def get_box_array(self):
         return self.box_array
 
+    def get_row_array(self):
+        return self.row_array
+
+    def get_col_array(self):
+        return self.col_array
+
 
     # Insert a legal number into the square
     def insert_num(self):
@@ -137,6 +143,7 @@ class Square:
         else:
             # Insert number into square which is not a duplicate and non zero
             self.nums[self.row][self.col] = self.num
+            print("Number inserted")
 
 
 if __name__ == "__main__":
@@ -150,7 +157,7 @@ if __name__ == "__main__":
                     ,[0, 0, 3, 5, 0, 8, 6, 9, 0]
                     ,[0, 4, 2, 9, 1, 0, 3, 0, 0]])
 
-    Square = Square(7, 4, 2, nums)
+    Square = Square(0, 0, 0, 8, nums)
     print("Row number: ", Square.get_row())
     print("Column number: ", Square.get_col())
     print("Num: ", Square.get_num())
