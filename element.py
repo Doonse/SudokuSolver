@@ -1,19 +1,19 @@
 from square import Square
-import numpy as np
 
 class Element():
-    def __init__(self):
+    def __init__(self, type):
         self.element = []
         self.type = type
 
-    def elem(self, square):
+    def add_square(self, square):
         self.element.append(square)
         if self.type == "row":
-            Square.row = self
+            square.set_row(self) 
         elif self.type == "col":
-            Square.col = self
+            square.set_col(self)
         elif self.type == "box":
-            Square.box = self
+            square.set_box(self)
+
     
     def check_legal(self, value):
         for square in self.element:
@@ -21,7 +21,8 @@ class Element():
                 return False
         return True
 
-
-
-
-
+if __name__ == "__main__":
+    e = Element("row")
+    s = Square()
+    e.add_square(s)
+    print(e.element)
