@@ -1,5 +1,3 @@
-import numpy as np
-
 class Square:
 
     def __init__(self):
@@ -26,15 +24,15 @@ class Square:
             return True
 
     # Brute force methods
-    def insert_num(self, value, array):
+    def insert_num(self, value):
         if self.check_legal() == False:
             print("Illegal number")
         else:
             # Insert number into square which is not a duplicate and non zero
             if self.num == 0:
-                array[self.row][self.col] = value
+                self.nums[self.row][self.col] = value
                 print("Number inserted")
-    
+
 
     # Setters
     def set_num(self, num):
