@@ -20,9 +20,9 @@ if __name__ == "__main__":
                     ,[0, 5, 0, 0, 8, 3, 0, 0, 0]
                     ,[6, 0, 0, 0, 0, 0, 1, 0, 5]
                     ,[0, 0, 3, 5, 0, 8, 6, 9, 0]
-                    ,[0, 4, 2, 9, 1, 0, 3, 0, 0]])
+                    ,[0, 4, 2, 9, 1, 0, 3, 0, 0]]) 
 
-    Element = Element(0, 0, 0, 8, nums)
+    Element = Element(0, 0, 0, 5, nums)
     print("True if legal, False if illegal: ", Element.check_legal(nums))
 
     
