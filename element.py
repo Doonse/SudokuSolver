@@ -1,35 +1,27 @@
 from square import Square
 import numpy as np
 
+class Element():
+    def __init__(self):
+        self.element = []
+        self.type = type
 
-class Element(Square):
-    def __init__(self, row, col, box, num, nums):
-        super().__init__(row, col, box, num, nums)
-        self.nums = nums
-        self.row = Square.get_row(self)
-        self.col = Square.get_col(self)
-        self.box = Square.get_box(self)
-
-
-if __name__ == "__main__":
-    nums = np.array([[0, 0, 4, 3, 0, 0, 2, 0, 9]
-                    ,[0, 0, 5, 0, 0, 9, 0, 0, 1]
-                    ,[0, 7, 0, 0, 6, 0, 0, 4, 3]
-                    ,[0, 0, 6, 0, 0, 2, 0, 8, 7]
-                    ,[1, 9, 0, 0, 0, 7, 4, 0, 0]
-                    ,[0, 5, 0, 0, 8, 3, 0, 0, 0]
-                    ,[6, 0, 0, 0, 0, 0, 1, 0, 5]
-                    ,[0, 0, 3, 5, 0, 8, 6, 9, 0]
-                    ,[0, 4, 2, 9, 1, 0, 3, 0, 0]])
-
-    Element = Element(0, 0, 0, 8, nums)
-    print("True if legal, False if illegal: ", Element.check_legal(nums))
-
+    # Check legality of number in row, column, and box, calling legality function in square
     
-
-    print(Element.get_row_array()) 
-    print(Element.get_col_array()) 
-    print(Element.get_box_array()) 
+    def elem(self, square):
+        self.element.append(square)
+        if self.type == "row":
+            Square.row = self
+        elif self.type == "col":
+            Square.col = self
+        elif self.type == "box":
+            Square.box = self
+    
+    def check_legal(self, value):
+        for square in self.element:
+            if square.get_num() == value:
+                return False
+        return True
 
 
 
