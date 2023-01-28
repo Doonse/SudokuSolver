@@ -1,5 +1,5 @@
-class Square:
 
+class Square:
     def __init__(self):
         self.num = None # Number in square
         self.row = None # Row position
