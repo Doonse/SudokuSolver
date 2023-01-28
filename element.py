@@ -16,6 +16,14 @@ class Element():
                 return False # Return false
         return True # Return true if the value is not in the element list
     
+    # Remove square from element list
+    def remove_square(self, value):
+        for square in self.element:
+            if square == value:
+                self.element.remove(square)
+
+            
+    
     def set_row(self):
         self.row = Square().get_row()
 

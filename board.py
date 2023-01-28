@@ -1,7 +1,6 @@
 from element import Element
 
 class Board:
-
     def __init__(self, nums):
         self.n_rows = len(nums[0]) 
         self.n_cols = len(nums)
@@ -27,6 +26,15 @@ class Board:
 
     def _check_legal(self, row, col, num):
         return self.rows[row].check_legal(num) and self.cols[col].check_legal(num) and self.boxes[self._find_box(row, col)].check_legal(num)
+
+
+    # remove square from row, col and box elements
+    def remove_square(self, row, col, num):
+        self.rows[row].remove_square(num)
+        self.cols[col].remove_square(num)
+        self.boxes[self._find_box(row, col)].remove_square(num)
+
+
 
     def __str__(self):
         r = "Board with " + str(self.n_rows) + " rows and " + str(self.n_cols) + " columns:\n"
