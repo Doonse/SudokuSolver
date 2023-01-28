@@ -26,42 +26,15 @@ class Square:
     # Insert number into square
     def insert_num(self, value):
         return self.num == value
-    """ def insert_num(self, value):
-        if self.check_legal() == False:
-            print("Illegal number")
-        else:
-            # Insert number into square which is not a duplicate and non zero
-            if self.num == 0:
-                self.nums[self.row][self.col] = value
-                print("Number inserted") """
-
 
     # Setters
     def set_num(self, num):
         self.num = num 
     
-    def set_row(self, row):
-        self.row = row
-    
-    def set_col(self, col):
-        self.col = col
-    
-    def set_box(self, box): 
-        self.box = box
-    
     # Getters
     def get_num(self):
         return self.num 
 
-    def get_row(self):
-        return self.row
-
-    def get_col(self):
-        return self.col
-    
-    def get_box(self):
-        return self.box
-    
 
 
 
