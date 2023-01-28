@@ -1,4 +1,4 @@
-from board import Board
+from b_test import Board
 from sudoku_reader import Sudoku_reader
 
 class SudokuBoard(Board):
@@ -11,5 +11,5 @@ class SudokuBoard(Board):
 if __name__ == "__main__":
     nums = Sudoku_reader("sudoku_10.csv").next_board()
     board = Board(nums)
-    board._set_up_nums().get_nums()
+    board._set_up_nums(nums)
     print(board)
