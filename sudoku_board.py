@@ -147,6 +147,3 @@ if __name__ == "__main__":
                     [0, 0, 3, 5, 0, 8, 6, 9, 0], 
                     [0, 4, 2, 9, 1, 0, 3, 0, 0]])
     print(nums)
-    b = SudokuBoard(nums)
-    print("SOLVED BOARD:")
-    print(b.solve(nums))

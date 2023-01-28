@@ -2,27 +2,43 @@ from square import Square
 
 class Element():
     def __init__(self, type):
-        self.element = []
-        self.type = type
+        self.element = [] # List of squares 
+        self.type = type # Type of element (row, column, box)
 
-    def add_square(self, square):
-        self.element.append(square)
-        if self.type == "row":
-            square.set_row(self) 
-        elif self.type == "col":
-            square.set_col(self)
-        elif self.type == "box":
-            square.set_box(self)
+    # Method appending a square to the element list
+    def add_square(self, square): 
+        self.element.append(square) # Append the square to the element list
+    
+    # Check if the value is legal in the element
+    def check_legal(self, value):
+        for square in self.element: # Iterate through the element list 
+            if square.get_num() == value: # If the value were checking for is in the element list
+                return False # Return false
+        return True # Return true if the value is not in the element list
+    
+    def set_row(self):
+        self.row = Square().get_row()
+
+    def set_col(self):
+        self.col = Square().get_col()
+
+    def set_box(self):
+        self.box = Square().get_box()
 
     
-    def check_legal(self, value):
-        for square in self.element:
-            if square.get_num() == value:
-                return False
-        return True
+    
+    # Get the element list
+    def get_element(self):
+        return self.element
+    
+    # Get the type of element (row, col, box)
+    def get_type(self):
+        return self.type
 
 if __name__ == "__main__":
-    e = Element("row")
+    row_element = Element("kuk")
     s = Square()
-    e.add_square(s)
-    print(e.element)
+    s.set_num(1)
+    row_element.add_square(s)
+    print(row_element.get_element()[0].get_num())
+    print(row_element.check_legal(row_element.get_element()[0]))

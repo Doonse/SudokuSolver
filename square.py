@@ -1,10 +1,10 @@
 class Square:
 
     def __init__(self):
-        self.num = None
-        self.row = None
-        self.col = None
-        self.box = None   
+        self.num = None # Number in square
+        self.row = None # Row position
+        self.col = None # Column position
+        self.box = None # Box position
 
     # Check legality of number
     def check_legal(self):
@@ -23,15 +23,17 @@ class Square:
         else:
             return True
 
-    # Brute force methods
+    # Insert number into square
     def insert_num(self, value):
+        return self.num == value
+    """ def insert_num(self, value):
         if self.check_legal() == False:
             print("Illegal number")
         else:
             # Insert number into square which is not a duplicate and non zero
             if self.num == 0:
                 self.nums[self.row][self.col] = value
-                print("Number inserted")
+                print("Number inserted") """
 
 
     # Setters
