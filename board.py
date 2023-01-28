@@ -26,7 +26,7 @@ class Board:
                 self.boxes[self._find_box(row, col)].add_square(self.nums[row][col])
 
     def _check_legal(self, row, col, num):
-        return self.rows[row].check_legal(num) and self.cols[col].check_legal(num) and self.boxes[self._find_box(row, col)].check_legal(num) 
+        return self.rows[row].check_legal(num) and self.cols[col].check_legal(num) and self.boxes[self._find_box(row, col)].check_legal(num)
 
     def __str__(self):
         r = "Board with " + str(self.n_rows) + " rows and " + str(self.n_cols) + " columns:\n"
