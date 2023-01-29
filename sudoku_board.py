@@ -1,5 +1,9 @@
 from board import Board
 from sudoku_reader import Sudoku_reader
+import time
+
+
+
 
 class SudokuBoard(Board):
     def __init__(self, nums):
@@ -30,12 +34,22 @@ class SudokuBoard(Board):
 
 
 if __name__ == "__main__":
-    nums = Sudoku_reader("sudoku_10.csv").next_board()
-    board = SudokuBoard(nums)
-    board._set_up_nums(nums)
-    board._set_up_elems()
-    board.solve(nums)
-    print(nums)
+        nums = Sudoku_reader("sudoku_1M.csv")
+        start = time.time()
+        for i in range(1000):
+            nums_in = nums.next_board()
+            board = SudokuBoard(nums_in)
+            board._set_up_nums(nums_in)
+            board._set_up_elems()
+            board.solve(nums_in)
+            print(nums_in)
+        end = time.time()
+        print("Time: ", end - start)
+
+
+
+
+
 
 
 

@@ -36,6 +36,4 @@ class Sudoku_reader:
 
 
 if __name__ == "__main__":
-
-    reader = Sudoku_reader("sudoku_10.csv")
-    print(reader.next_board())
+    pass
