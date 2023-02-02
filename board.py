@@ -15,33 +15,22 @@ class Board:
     def _set_up_nums(self, array): # array is a 2D list
         for row in range(self.n_rows): 
             for col in range(self.n_cols): 
-                self.nums[row][col] = int(array[row][col]) # Converts string to int and stores it in the board
+                self.nums[row][col] = int(array[row][col]) # Converts float to whole int and stores it in the board, just for nice look
 
-    def _set_up_elems(self):
+    # Creates the elements and adds the squares to the elements
+    def _set_up_elems(self): 
         for row in range(self.n_rows):
             for col in range(self.n_cols):
-                self.rows[row].add_square(self.nums[row][col])
-                self.cols[col].add_square(self.nums[row][col])
-                self.boxes[self._find_box(row, col)].add_square(self.nums[row][col])
+                self.rows[row].add_square(self.nums[row][col]) # Adds the square to the row element
+                self.cols[col].add_square(self.nums[row][col]) # Adds the square to the column element
+                self.boxes[self._find_box(row, col)].add_square(self.nums[row][col]) # Adds the square to the box element
 
-    def _check_legal(self, row, col, num):
+    # Check if number is legal in row, col and box 
+    def _check_legal(self, row, col, num): 
         return self.rows[row].check_legal(num) and self.cols[col].check_legal(num) and self.boxes[self._find_box(row, col)].check_legal(num)
 
-
-    # remove square from row, col and box elements
-    def remove_square(self, row, col, num):
+    # remove square from row, col and box elements when backtracking
+    def remove_square(self, row, col, num): 
         self.rows[row].remove_square(num)
         self.cols[col].remove_square(num)
         self.boxes[self._find_box(row, col)].remove_square(num)
-
-
-
-    def __str__(self):
-        r = "Board with " + str(self.n_rows) + " rows and " + str(self.n_cols) + " columns:\n"
-        r += " ["
-        for num in self.nums:
-            for elem in num:
-                r += elem.__str__() + "  "
-            r = r[:-2] + "]" + "\n ["
-        r = r[:-3] + ""
-        return r
