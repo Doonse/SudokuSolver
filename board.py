@@ -1,4 +1,5 @@
 from element import Element
+from square import Square
 
 class Board:
     def __init__(self, nums):
@@ -13,9 +14,9 @@ class Board:
         return (row // 3) * 3 + col // 3 # Returns the box number
 
     def _set_up_nums(self, array): # array is a 2D list
-        for row in range(self.n_rows): 
-            for col in range(self.n_cols): 
-                self.nums[row][col] = int(array[row][col]) # Converts float to whole int and stores it in the board, just for nice look
+        for row in range(self.n_rows):
+            for col in range(self.n_cols):
+                self.nums[row][col] = Square(array[row][col]).get_num() # Add Square object and get its number
 
     # Creates the elements and adds the squares to the elements
     def _set_up_elems(self): 
@@ -27,7 +28,10 @@ class Board:
 
     # Check if number is legal in row, col and box 
     def _check_legal(self, row, col, num): 
-        return self.rows[row].check_legal(num) and self.cols[col].check_legal(num) and self.boxes[self._find_box(row, col)].check_legal(num)
+        if self.rows[row].check_legal(num) and self.cols[col].check_legal(num) and self.boxes[self._find_box(row, col)].check_legal(num):
+            return True
+        else:
+            return False
 
     # remove square from row, col and box elements when backtracking
     def remove_square(self, row, col, num): 

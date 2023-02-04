@@ -36,7 +36,7 @@ class SudokuBoard(Board):
 if __name__ == "__main__":
         nums = Sudoku_reader("sudoku_1M.csv") # Creates a Sudoku_reader object. Row of 81 numbers from file
         start = time.time() # Starts the timer
-        for i in range(1000): # Loops through the games in the file. 
+        for i in range(100): # Loops through the games in the file. 
             nums_in = nums.next_board() # Gets the next game from the file
             board = SudokuBoard(nums_in) # Creates a SudokuBoard object
             board._set_up_nums(nums_in) # Sets up the sudokuboard

@@ -1,7 +1,7 @@
 
 class Square:
-    def __init__(self):
-        self.num = None # Number in square
+    def __init__(self, num):
+        self.num = num # Number in square
         self.row = None # Row position
         self.col = None # Column position
         self.box = None # Box position
